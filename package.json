@@ -1,0 +1,29 @@
+{
+  "name": "api-daniela-shop",
+  "version": "1.0.0",
+  "description": "Test for Tres Pi Medios",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alejandro2134/api-daniela-shop.git"
+  },
+  "keywords": [
+    "API"
+  ],
+  "author": "Alejandro Zapata Molina",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alejandro2134/api-daniela-shop/issues"
+  },
+  "homepage": "https://github.com/Alejandro2134/api-daniela-shop#readme"
+}
