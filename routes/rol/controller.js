@@ -2,15 +2,16 @@ const store = require('./store');
 
 const addRole = newRole => {
     return new Promise((resolve, reject) => {
-        if(!newRole.rol) {
-            return reject('El rol no puede estar vacio');
+        if(!newRole.rol_name) {
+            reject('El rol no puede estar vacio');
         } else {
             store.addRole(newRole)
-                .catch(err => {
-                    return reject(err);
+                .then(response => {
+                    resolve(response);
                 })
-
-            resolve('');
+                .catch(err => {
+                    reject(err.toString());
+                })
         }
     })
 }

@@ -6,7 +6,7 @@ const addRole = async newRole => {
             rol_name: newRole.rol_name
         })
     } catch (err) {
-        throw new Error(err);
+        throw new Error('Error interno');
     }
 }
 
