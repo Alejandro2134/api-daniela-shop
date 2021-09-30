@@ -45,7 +45,7 @@ const initializeDb = async () => {
             user_id: 'ea8b8d1b-651b-425d-8730-a01b34a6c9e2'
         })
     } catch (err) {
-        console.log(err);
+        console.log('Rol y usuario admin ya creados');
     }
 }
 
