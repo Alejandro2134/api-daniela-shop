@@ -23,6 +23,7 @@ const connectionDetails = {
 
 * `npm install` para instalar las dependencias
 * `npm run start` para ejecutar en producción
+* El proyecto corre en el puerto 3000
 
 ## Notas
 
