@@ -1,0 +1,70 @@
+Sentencias DDL
+
+//Creación base de datos
+
+CREATE DATABASE shop;
+
+// Instalación paquete para generar UUIDv4
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+// Creación tabla products
+
+CREATE TABLE products
+(
+    description character varying(30),
+    product_id uuid NOT NULL DEFAULT uuid_generate_v4(),
+    product_name character varying(30),
+    price integer,
+    CONSTRAINT products_pkey PRIMARY KEY (product_id)
+);
+
+// Creación tabla roles
+
+CREATE TABLE roles
+(
+    roles_id uuid NOT NULL DEFAULT uuid_generate_v4(),
+    rol_name character varying(30),
+    CONSTRAINT roles_pkey PRIMARY KEY (roles_id)
+);
+
+// Creación tabla sales
+
+CREATE TABLE sales
+(
+    sales_id uuid NOT NULL DEFAULT uuid_generate_v4(),
+    product_id uuid,
+    qty integer,
+    sale_at timestamp without time zone,
+    users_id uuid,
+    CONSTRAINT sales_pkey PRIMARY KEY (sales_id),
+    CONSTRAINT sales_product_id_fkey FOREIGN KEY (product_id)
+        REFERENCES public.products (product_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT sales_users_id_fkey FOREIGN KEY (users_id)
+        REFERENCES public.users (user_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+);
+
+//Creación tabla users
+
+CREATE TABLE public.users
+(
+    user_document character varying(20),
+    user_id uuid NOT NULL DEFAULT uuid_generate_v4(),
+    last_name character varying(30),
+    user_name character varying(30),
+    roles_id uuid,
+    CONSTRAINT users_pkey PRIMARY KEY (user_id),
+    CONSTRAINT users_roles_id_fkey FOREIGN KEY (roles_id)
+        REFERENCES public.roles (roles_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+);
+
+
+Sentencia DML creación de productos
+
+INSERT INTO products(product_id, product_name, description, price) VALUES ("479fba0a-baaf-4b46-95a2-83a663817646", "Arroz",  "Libra", 3000);
