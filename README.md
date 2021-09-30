@@ -24,6 +24,11 @@ const connectionDetails = {
 * `npm install` para instalar las dependencias
 * `npm run start` para ejecutar en producción
 
-## Nota
+## Notas
 
-Al ejecutar por primera vez se crean automaticamente los 5 prodúctos, el rol admin y un usuario con dicho rol.
+* Al ejecutar por primera vez se crean automaticamente los 5 prodúctos, el rol admin y un usuario con dicho rol.
+
+* En la carpeta `EntregablesProyecto` se encuentran:
+  - Un archivo .json con los endpoints creados en postman
+  - Un txt con las sentencias DML y DDL
+  - Un archivo .sql que contiene un script de la bd
