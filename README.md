@@ -24,3 +24,6 @@ const connectionDetails = {
 * `npm install` para instalar las dependencias
 * `npm run start` para ejecutar en producción
 
+## Nota
+
+Al ejecutar por primera vez se crean automaticamente los 5 prodúctos, el rol admin y un usuario con dicho rol.
