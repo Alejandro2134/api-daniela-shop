@@ -24,12 +24,12 @@ const listUsers = () => {
     })
 }
 
-const deleteUser = userDocument => {
+const deleteUser = userId => {
     return new Promise((resolve, reject) => {
-        if(!userDocument.document) {
+        if(!userId.user_id) {
             reject('No puede estar vacio');
         } else {
-            store.deleteUser(userDocument)
+            store.deleteUser(userId)
                 .then(response => {
                     resolve(response);
                 })
@@ -42,7 +42,7 @@ const deleteUser = userDocument => {
 
 const updateUser = userInfo => {
     return new Promise((resolve, reject) => {
-        if(!userInfo.document || !userInfo.rol) {
+        if(!userInfo.user_id || !userInfo.rol) {
             reject('Todos los datos son necesarios');
         } else {
             store.updateUser(userInfo)

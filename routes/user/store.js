@@ -21,9 +21,9 @@ const listUsers = async () => {
     }
 }
 
-const deleteUser = async userDocument => {
+const deleteUser = async userId => {
     try {
-        await db.db.none('DELETE FROM users WHERE user_document = $1', userDocument.document);
+        await db.db.none('DELETE FROM users WHERE user_id = $1', userId.user_id);
     } catch (err) {
         throw new Error('No existe el usuario');
     }
@@ -32,7 +32,7 @@ const deleteUser = async userDocument => {
 const updateUser = async userInfo => {
     try {
         const rolId = await db.db.one('SELECT roles_id FROM roles WHERE rol_name = $1', userInfo.rol);
-        await db.db.none('UPDATE users SET roles_id = $1 WHERE user_document = $2', [rolId.roles_id, userInfo.document]);
+        await db.db.none('UPDATE users SET roles_id = $1 WHERE user_id = $2', [rolId.roles_id, userInfo.user_id]);
     } catch (err) {
         throw new Error('El rol no existe o el usuario no existe');
     }
