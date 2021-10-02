@@ -7,7 +7,7 @@
 
 ## Editar la configuración de conexión
 
-Encontraras un archivo llamado db.js en el cual habrá un objeto de configuración, en este se debe actualizar cambiar la contraseña y el usuario con los datos de tu sistema:
+Encontraras un archivo llamado db.js en el cual habrá un objeto de configuración, en este se debe actualizar y cambiar la contraseña y el usuario con los datos de tu sistema:
 
 ```
 const connectionDetails = {
