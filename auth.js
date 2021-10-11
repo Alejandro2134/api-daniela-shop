@@ -2,8 +2,8 @@ const db = require('./db');
 
 const auth = async idUser => {
     try {
-        const rolId = await db.db.one('SELECT roles_id FROM users WHERE user_id = $1', idUser);
-        const rol = await db.db.one('SELECT rol_name FROM roles WHERE roles_id = $1', rolId.roles_id);
+        const rolId = await db.one('SELECT roles_id FROM users WHERE user_id = $1', idUser);
+        const rol = await db.one('SELECT rol_name FROM roles WHERE roles_id = $1', rolId.roles_id);
         return rol;
     } catch (err) {
         console.log(err);

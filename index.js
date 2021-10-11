@@ -1,13 +1,10 @@
 const express = require('express');
-const db = require('./db');
+require('./db');
 const routesApi = require('./network/routes');
 
 const app = express();
 
 app.use(express.json());
-
-// Inicializar db con productos
-db.initializeDb();
 
 //Rutas api
 routesApi(app);
